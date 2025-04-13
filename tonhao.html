@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SITE FEIO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        
+        body {
+            font-family: 'Comic Neue', cursive;
+            background-color: #ff00ff;
+            background-image: linear-gradient(45deg, #ff00ff 0%, #ffff00 100%);
+            animation: rainbow 10s linear infinite;
+        }
+        
+        @keyframes rainbow {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+        
+        .car-image, .kid-image {
+            border: 10px dotted lime;
+            transform: rotate(5deg);
+            box-shadow: 20px 20px 0px rgba(0,0,0,0.3);
+            transition: all 0.5s ease;
+        }
+        
+        .car-image:hover, .kid-image:hover {
+            transform: rotate(-5deg) scale(1.1);
+            border-color: red;
+            filter: sepia(100%);
+        }
+        
+        .ugly-button {
+            background: linear-gradient(to right, #ff0000, #00ff00, #0000ff);
+            color: white;
+            text-shadow: 2px 2px 0px black;
+            border: 5px dashed yellow;
+            padding: 15px 30px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            animation: pulse 2s infinite;
+        }
+        
+        .ugly-button:hover {
+            transform: skewX(-20deg) scale(1.2);
+            background: linear-gradient(to right, #ffff00, #ff00ff, #00ffff);
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .title {
+            font-size: 72px;
+            text-shadow: 5px 5px 0px rgba(255,255,255,0.5);
+            color: #000;
+            -webkit-text-stroke: 2px #fff;
+            letter-spacing: 5px;
+            transform: rotate(-5deg);
+            animation: title-shake 0.5s infinite alternate;
+        }
+        
+        @keyframes title-shake {
+            0% { transform: rotate(-5deg) translateX(0px); }
+            100% { transform: rotate(-5deg) translateX(10px); }
+        }
+        
+        .arrow {
+            font-size: 40px;
+            animation: bounce 0.5s infinite alternate;
+            display: inline-block;
+            transform: rotate(90deg);
+        }
+        
+        @keyframes bounce {
+            0% { transform: rotate(90deg) translateY(0); }
+            100% { transform: rotate(90deg) translateY(-10px); }
+        }
+        
+        .caption {
+            background: rgba(255,255,255,0.7);
+            padding: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            border: 3px dashed red;
+            transform: rotate(3deg);
+            margin-top: -20px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4">
+    <div class="text-center">
+        <h1 class="title mb-10">FODASE O TONHAO KKKKKKK</h1>
+        
+        <img 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnvOQGE-8IssU9XliHFPUwy6guRFgSNAj3Mg&s" 
+            alt="Carro de corrida feio" 
+            class="car-image w-full max-w-2xl mx-auto mb-10"
+        >
+        
+        <!-- Nova seção com a criança -->
+        <div class="mb-10 relative">
+            <img 
+                src="https://i.ytimg.com/vi/OzS_46KFGAQ/maxresdefault.jpg" 
+                alt="Tonhão criança" 
+                class="kid-image w-full max-w-md mx-auto"
+            >
+            <div class="mt-2">
+                <span class="arrow">➡</span>
+                <span class="caption text-xl font-bold">TONHÃO QUANDO CRIANÇA</span>
+            </div>
+        </div>
+        
+        <button 
+            onclick="window.location.href='http://wa.me/5541984277646'" 
+            class="ugly-button rounded-none"
+        >
+            CLIQUE AQUI PARA XINGAR O TONHÃO
+        </button>
+        
+        <div class="mt-10 text-white text-xl">
+            <p>⚠️ ATENÇÃO: Este site foi feito para ser feio de propósito, igual o Tonhão</p>
+            <p class="mt-2">Não nos responsabilizamos por danos oculares ou convulsões</p>
+        </div>
+    </div>
+    
+    <div class="fixed bottom-0 right-0 p-4 bg-black text-white text-xs">
+        <p>Você está visitando o site mais feio da internet </p>
+    </div>
+    
+    <script>
+        // Efeito adicional para tornar o site ainda mais irritante
+        document.addEventListener('mousemove', function(e) {
+            const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+            
+            setTimeout(() => {
+                document.body.style.backgroundColor = '';
+            }, 100);
+        });
+        
+        // Efeito de texto piscando
+        setInterval(() => {
+            const title = document.querySelector('.title');
+            title.style.color = title.style.color === 'black' ? 'white' : 'black';
+            
+            // Faz a seta mudar de cor aleatoriamente
+            const arrows = document.querySelectorAll('.arrow');
+            arrows.forEach(arrow => {
+                const colors = ['red', 'blue', 'green', 'yellow', 'purple'];
+                arrow.style.color = colors[Math.floor(Math.random() * colors.length)];
+            });
+        }, 500);
+        
+        // Faz a legenda girar
+        setInterval(() => {
+            const captions = document.querySelectorAll('.caption');
+            captions.forEach(caption => {
+                const rotation = Math.floor(Math.random() * 10) - 5;
+                caption.style.transform = `rotate(${rotation}deg)`;
+            });
+        }, 1000);
+    </script>
+</body>
+</html>
